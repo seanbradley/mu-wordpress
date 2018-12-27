@@ -108,7 +108,7 @@ change the `keyName` definition there.
 Commit your changes and push them back up to your GitHub account:
 
     git add mu.yml
-    git commit -m'first config' && git push
+    git commit -m 'first config' && git push
 
 ### Spin it up
 
@@ -130,8 +130,7 @@ Watch your pipeline get deployed:
 
 ### Inspect
 
-When that's done, you can verify that you have 2 environments, "test" and
-"prod":
+When that's done, you can verify that you have at least a "test" env...
     
     mu env list
 
@@ -141,7 +140,6 @@ You'll see a table like this:
     | ENVIRONMENT |         STACK         |       STATUS        |     LAST UPDATE | MU VERSION |
     +-------------+-----------------------+---------------------+---------------------+------------+
     | test        | mu-cluster-test       | CREATE_COMPLETE     | 2017-05-23 14:48:04 | 0.1.13     |
-    | prod        | mu-cluster-prod       | CREATE_COMPLETE     | 2017-05-23 16:23:28 | 0.1.13     |
     +-------------+-----------------------+---------------------+---------------------+------------+
 
 You can view the details on any of the environments:
@@ -175,6 +173,31 @@ Append "/wp-admin" to that and load the URL in your browser:
 
 Follow the instructions there to set up a WordPress admin user,
 initialize the database, etc.
+
+If you approve the "test" env for deployment to production, then execute...
+
+    mu service show | head
+    
+...to retrieve the AWS Code Pipeline URL that will let you approve the site
+for production. Click on the REVIEW button, enter any comment you like, and
+click APPROVE. Likewise, executing...
+
+    mu pipeline logs -f
+    mu env show prod |head
+    
+...will provide you with the public URL for the website.
+
+You should also now see a table of envs like so:
+
+    +-------------+-----------------------+---------------------+---------------------+------------+
+    | ENVIRONMENT |         STACK         |       STATUS        |     LAST UPDATE | MU VERSION |
+    +-------------+-----------------------+---------------------+---------------------+------------+
+    | test        | mu-cluster-test       | CREATE_COMPLETE     | 2017-05-23 14:48:04 | 0.1.13     |
+    | prod        | mu-cluster-prod       | CREATE_COMPLETE     | 2017-05-23 16:23:28 | 0.1.13     |
+    +-------------+-----------------------+---------------------+---------------------+------------+
+
+
+
 
 
 ### Update your content
