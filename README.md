@@ -5,6 +5,12 @@ Run WordPress on Amazon ECS and RDS with mu
 
 ## Overview
 
+Stelligent's Mu utility is a command-line cloud configuration and continuous delivery utility for AWS resources.
+
+This repo leverages Mu to manage the entire pipeline from local development to deployment on AWS appliances.
+
+A good place to start: this [overview](https://stelligent.com/2017/06/08/wordpress-mu-and-you/)
+
 We can use [mu](https://getmu.io) to:
 
 + customize the official [WordPress Docker image](https://hub.docker.com/r/_/wordpress/),
