@@ -3,7 +3,7 @@
 
 ## See https://github.com/stelligent/mu/wiki/Environments
 environments:
-- name: dev
+- name: test
   ### Attributes for the ECS container instances
   cluster:
     #### Name of EC2 keypair to associate with ECS container instances.
@@ -71,7 +71,7 @@ service:
     #### Define this for each environment if you want WP_DEBUG=true
     #### in wp-config.php
     WORDPRESS_DEBUG:
-      dev: 'true'
+      test: 'true'
       prod: 
 
   ### See https://github.com/stelligent/mu/wiki/Pipelines
@@ -88,7 +88,7 @@ service:
     acceptance:
       #### The environment name to deploy to for testing
       #### (default: dev)
-      environment: dev
+      environment: test
     production:
       #### The environment name to deploy to for production
       #### (default: production)
