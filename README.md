@@ -196,9 +196,10 @@ You should also now see a table of envs like so:
     | prod        | mu-cluster-prod       | CREATE_COMPLETE     | 2017-05-23 16:23:28 | 0.1.13     |
     +-------------+-----------------------+---------------------+---------------------+------------+
 
+### If Pipeline Fails
 
-
-
+You'll need to increment the SSH key, the cluster names, and the DB name
+in the mu.yml file.
 
 ### Update your content
 

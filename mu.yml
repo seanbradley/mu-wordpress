@@ -9,7 +9,7 @@ environments:
     #### Name of EC2 keypair to associate with ECS container instances.
     #### Launches bastion host if defined.
     #### (default: none)
-    keyName: muwp4
+    keyName: wp5
 
     #### The instance type to use for the ECS container instances
     #### (default: t2.micro)
@@ -17,13 +17,13 @@ environments:
 
 - name: prod
   cluster:
-    keyName: muwp4
+    keyName: wp5
     #instanceType: t2.small
     instanceType: t2.micro
 
 ## See https://github.com/stelligent/mu/wiki/Services
 service:
-  name: muwp4
+  name: wp5
 
   ### The desired number of tasks to run for the service
   ### (default: 2)
@@ -51,7 +51,7 @@ service:
   ### See https://github.com/stelligent/mu/wiki/Databases
   database:
     #### Name of database to create on RDS instance
-    name: muwp4
+    name: wp5
 
     #### RDS engine to use
     #### (default: aurora)
