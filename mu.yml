@@ -9,7 +9,7 @@ environments:
     #### Name of EC2 keypair to associate with ECS container instances.
     #### Launches bastion host if defined.
     #### (default: none)
-    keyName: mu-wordpress
+    keyName: mu-wordpress-two
 
     #### The instance type to use for the ECS container instances
     #### (default: t2.micro)
