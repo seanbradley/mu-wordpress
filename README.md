@@ -201,6 +201,14 @@ You should also now see a table of envs like so:
 You'll need to increment the SSH key, the cluster names, and the DB name
 in the mu.yml file.
 
+Or--use the namespace flag (-n).
+
+Finally, at the risk of data loss, you can purge all artifacts in a given namespace with...
+
+    mu purge
+    
+The purge command will delete CloudFormation stacks. Note: mu not only spins up EC2 instances, but also creates S3 buckets and, potentially, an RDS database...so check to see if those resources with the given namespace have been deleted, too.
+
 ### Update your content
 
 Everything in your repo's `html` directory will be installed in your
